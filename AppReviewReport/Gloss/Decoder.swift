@@ -42,7 +42,7 @@ public struct Decoder {
         return {
             json in
             
-            if let value = json.valueForKeyPath(key, withDelimiter: keyPathDelimiter) as? T {
+            if let value = json.value(forKeyPath: key, withDelimiter: keyPathDelimiter) as? T {
                 return value
             }
             
@@ -63,7 +63,7 @@ public struct Decoder {
         return {
             json in
             
-            if let dateString = json.valueForKeyPath(key, withDelimiter: keyPathDelimiter) as? String {
+            if let dateString = json.value(forKeyPath: key, withDelimiter: keyPathDelimiter) as? String {
                 return dateFormatter.date(from: dateString)
             }
             
@@ -84,7 +84,7 @@ public struct Decoder {
         return {
             json in
             
-            if let dateStrings = json.valueForKeyPath(key, withDelimiter: keyPathDelimiter) as? [String] {
+            if let dateStrings = json.value(forKeyPath: key, withDelimiter: keyPathDelimiter) as? [String] {
                 var dates: [Date] = []
                 
                 for dateString in dateStrings {
@@ -136,7 +136,7 @@ public struct Decoder {
         return {
             json in
             
-            if let subJSON = json.valueForKeyPath(key, withDelimiter: keyPathDelimiter) as? JSON {
+            if let subJSON = json.value(forKeyPath: key, withDelimiter: keyPathDelimiter) as? JSON {
                 return T(json: subJSON)
             }
             
@@ -157,7 +157,7 @@ public struct Decoder {
         return {
             json in
             
-            if let jsonArray = json.valueForKeyPath(key, withDelimiter: keyPathDelimiter) as? [JSON] {
+            if let jsonArray = json.value(forKeyPath: key, withDelimiter: keyPathDelimiter) as? [JSON] {
                 var models: [T] = []
                 
                 for subJSON in jsonArray {
@@ -185,7 +185,7 @@ public struct Decoder {
         return {
             json in
             
-            guard let dictionary = json.valueForKeyPath(key, withDelimiter: keyPathDelimiter) as? [String : JSON] else {
+            guard let dictionary = json.value(forKeyPath: key, withDelimiter: keyPathDelimiter) as? [String : JSON] else {
                 return nil
             }
             
@@ -213,14 +213,16 @@ public struct Decoder {
         return {
             json in
             
-            guard let dictionary = json.valueForKeyPath(key, withDelimiter: keyPathDelimiter) as? [String : [JSON]] else {
+            guard let dictionary = json.value(forKeyPath: key, withDelimiter: keyPathDelimiter) as? [String : [JSON]] else {
                 return nil
             }
             
             return dictionary.flatMap {
                 (key, value) in
                 
-                let decoded = [T].fromJSONArray(value)
+                guard let decoded = [T].fromJSONArray(value) else {
+                    return nil
+                }
                 
                 return (key, decoded)
             }
@@ -239,7 +241,7 @@ public struct Decoder {
         return {
             json in
             
-            if let rawValue = json.valueForKeyPath(key, withDelimiter: keyPathDelimiter) as? T.RawValue {
+            if let rawValue = json.value(forKeyPath: key, withDelimiter: keyPathDelimiter) as? T.RawValue {
                 return T(rawValue: rawValue)
             }
             
@@ -259,7 +261,7 @@ public struct Decoder {
         return {
             json in
             
-            if let rawValues = json.valueForKeyPath(key, withDelimiter: keyPathDelimiter) as? [T.RawValue] {
+            if let rawValues = json.value(forKeyPath: key, withDelimiter: keyPathDelimiter) as? [T.RawValue] {
                 var enumValues: [T] = []
                 
                 for rawValue in rawValues {
@@ -455,8 +457,8 @@ public struct Decoder {
         return {
             json in
             
-            if let urlString = json.valueForKeyPath(key, withDelimiter: keyPathDelimiter) as? String,
-                let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
+            if let urlString = json.value(forKeyPath: key, withDelimiter: keyPathDelimiter) as? String,
+                let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) {
                 return URL(string: encodedString)
             }
             
@@ -476,7 +478,7 @@ public struct Decoder {
         return {
             json in
             
-            if let urlStrings = json.valueForKeyPath(key, withDelimiter: keyPathDelimiter) as? [String] {
+            if let urlStrings = json.value(forKeyPath: key, withDelimiter: keyPathDelimiter) as? [String] {
                 var urls: [URL] = []
                 
                 for urlString in urlStrings {

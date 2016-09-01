@@ -148,6 +148,7 @@
 					6D684B7B1D77C09000B0FE05 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4SR6G3HYXU;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -362,6 +363,7 @@
 				6D684B901D77C09000B0FE05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

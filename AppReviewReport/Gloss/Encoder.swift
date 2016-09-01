@@ -41,7 +41,7 @@ public struct Encoder {
         return {
             property in
             
-            if let property = property as? AnyObject {
+            if let property = property {
                 return [key : property]
             }
             
@@ -60,7 +60,7 @@ public struct Encoder {
         return {
             array in
             
-            if let array = array as? AnyObject {
+            if let array = array {
                 return [key : array]
             }
             
@@ -81,7 +81,7 @@ public struct Encoder {
             date in
             
             if let date = date {
-                return [key : dateFormatter.string(from: date) as AnyObject]
+                return [key : dateFormatter.string(from: date)]
             }
             
             return nil
@@ -109,7 +109,7 @@ public struct Encoder {
                     dateStrings.append(dateString)
                 }
                 
-                return [key : dateStrings as AnyObject]
+                return [key : dateStrings]
             }
             
             return nil
@@ -150,7 +150,7 @@ public struct Encoder {
             model in
             
             if let model = model, let json = model.toJSON() {
-                return [key : json as AnyObject]
+                return [key : json]
             }
             
             return nil
@@ -177,7 +177,7 @@ public struct Encoder {
                     }
                 }
                 
-                return [key : encodedArray as AnyObject]
+                return [key : encodedArray]
             }
             
             return nil
@@ -207,7 +207,7 @@ public struct Encoder {
                 return (key, json)
             }
             
-            return [key : encoded as AnyObject]
+            return [key : encoded]
         }
     }
     
@@ -236,7 +236,7 @@ public struct Encoder {
                 return (key, jsonArray)
             }
             
-            return [key : encoded as AnyObject]
+            return [key : encoded]
         }
     }
     
@@ -252,7 +252,7 @@ public struct Encoder {
             enumValue in
             
             if let enumValue = enumValue {
-                return [key : enumValue.rawValue as AnyObject]
+                return [key : enumValue.rawValue]
             }
             
             return nil
@@ -277,7 +277,7 @@ public struct Encoder {
                     rawValues.append(enumValue.rawValue)
                 }
                 
-                return [key : rawValues as AnyObject]
+                return [key : rawValues]
             }
             
             return nil
@@ -317,7 +317,7 @@ public struct Encoder {
             if let int32Array = int32Array {
                 let numbers: [NSNumber] = int32Array.map { NSNumber(value: $0) }
                 
-                return [key : numbers as AnyObject]
+                return [key : numbers]
             }
             
             return nil
@@ -357,7 +357,7 @@ public struct Encoder {
 			if let uInt32Array = uInt32Array {
 				let numbers: [NSNumber] = uInt32Array.map { NSNumber(value: $0) }
 
-				return [key : numbers as AnyObject]
+				return [key : numbers]
 			}
 
 			return nil
@@ -397,7 +397,7 @@ public struct Encoder {
             if let int64Array = int64Array {
                 let numbers: [NSNumber] = int64Array.map { NSNumber(value: $0) }
                 
-                return [key : numbers as AnyObject]
+                return [key : numbers]
             }
             
             return nil
@@ -437,7 +437,7 @@ public struct Encoder {
 			if let uInt64Array = uInt64Array {
 				let numbers: [NSNumber] = uInt64Array.map { NSNumber(value: $0) }
 
-				return [key : numbers as AnyObject]
+				return [key : numbers]
 			}
 
 			return nil
@@ -456,7 +456,7 @@ public struct Encoder {
             url in
             
             if let absoluteURLString = url?.absoluteString {
-                return [key : absoluteURLString as AnyObject]
+                return [key : absoluteURLString]
             }
             
             return nil
