@@ -32,8 +32,8 @@ class ReviewRetriver: NSObject {
     loadDataTask.resume()
   }
 
-  class func getReviewsFrom(AppID: String, completion: @escaping ([Review]?) -> Void ){
-    let url = "http://itunes.apple.com/rss/customerreviews/id=\(AppID)/sortBy=mostRecent/json"
+  class func getReviewsFrom(AppID: String, Country: String, completion: @escaping ([Review]?) -> Void ){
+    let url = "http://itunes.apple.com/\(Country)/rss/customerreviews/id=\(AppID)/sortBy=mostRecent/json"
     loadDataFromURL(url) { (data, error) in
       if let data=data{
 
@@ -42,11 +42,13 @@ class ReviewRetriver: NSObject {
 
           guard let reviews = RSS(json: json!) else{
             print("Error initializing RSS object")
+             completion(nil)
             return
           }
 
           guard let items = reviews.feed?.entries else{
             print("No item found")
+             completion(nil)
             return
           }
 
@@ -54,6 +56,8 @@ class ReviewRetriver: NSObject {
 
         } catch {
           print(error)
+
+          completion(nil)
           
         }
       }

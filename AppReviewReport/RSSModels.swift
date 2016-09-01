@@ -23,7 +23,7 @@ public struct Feed: Decodable{
 }
 
 public struct Review: Decodable{
-  public let ratingStars:String
+  public let ratingStars:Int
   public let author:String
   public let version:String
   public let title:String
@@ -49,7 +49,7 @@ public struct Review: Decodable{
     self.author=author
     self.content=content
     self.version=version
-    self.ratingStars=rating
+    self.ratingStars = Int(rating)!
     self.title=title
     
     

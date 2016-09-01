@@ -27,7 +27,7 @@ class ReviewTableViewCell: UITableViewCell {
 
   public func setCellContent(review: Review){
 
-    let rate :String = getStarString(star: Int(review.ratingStars)!)
+    let rate :String = getStarString(star: review.ratingStars)
 
     self.lbTitle.text = "\(rate) - \(review.title)"
     self.lbAuthor.text = "\(review.author) - \(review.version)"
