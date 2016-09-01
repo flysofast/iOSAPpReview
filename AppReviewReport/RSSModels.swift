@@ -44,15 +44,15 @@ public struct Review: Decodable{
       let rating: String = "label" <~~ ratingCont,
       let title: String = "label" <~~ titleCont,
       let content: String = "label" <~~ contentCont
-    else {return nil}
+      else {return nil}
 
     self.author=author
     self.content=content
     self.version=version
     self.ratingStars=rating
     self.title=title
-
-
+    
+    
   }
-
+  
 }

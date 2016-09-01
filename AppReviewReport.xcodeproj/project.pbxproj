@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D131ECF1D78033A00196C1D /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D131ECE1D78033A00196C1D /* ReviewTableViewCell.swift */; };
 		6D684B801D77C09000B0FE05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D684B7F1D77C09000B0FE05 /* AppDelegate.swift */; };
 		6D684B851D77C09000B0FE05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D684B831D77C09000B0FE05 /* Main.storyboard */; };
 		6D684B871D77C09000B0FE05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D684B861D77C09000B0FE05 /* Assets.xcassets */; };
 		6D684B8A1D77C09000B0FE05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D684B881D77C09000B0FE05 /* LaunchScreen.storyboard */; };
 		6D684B921D77C0D300B0FE05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D684B911D77C0D300B0FE05 /* ViewController.swift */; };
-		6D684BA61D77C0EE00B0FE05 /* ReviewRSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D684BA51D77C0EE00B0FE05 /* ReviewRSS.swift */; };
+		6D684BA61D77C0EE00B0FE05 /* RSSModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D684BA51D77C0EE00B0FE05 /* RSSModels.swift */; };
 		6D8F98F31D77D27000FDA633 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F98EB1D77D27000FDA633 /* Decoder.swift */; };
 		6D8F98F41D77D27000FDA633 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F98EC1D77D27000FDA633 /* Encoder.swift */; };
 		6D8F98F51D77D27000FDA633 /* ExtensionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F98ED1D77D27000FDA633 /* ExtensionArray.swift */; };
@@ -20,9 +21,12 @@
 		6D8F98F71D77D27000FDA633 /* Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F98F01D77D27000FDA633 /* Gloss.swift */; };
 		6D8F98F81D77D27000FDA633 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D8F98F11D77D27000FDA633 /* Info.plist */; };
 		6D8F98F91D77D27000FDA633 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F98F21D77D27000FDA633 /* Operators.swift */; };
+		6D8F98FB1D77D82000FDA633 /* ReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F98FA1D77D82000FDA633 /* ReviewsTableViewController.swift */; };
+		6D8F98FD1D77DA6100FDA633 /* ReviewRetriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F98FC1D77DA6100FDA633 /* ReviewRetriver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D131ECE1D78033A00196C1D /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		6D684B7C1D77C09000B0FE05 /* AppReviewReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppReviewReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D684B7F1D77C09000B0FE05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D684B841D77C09000B0FE05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,7 +34,7 @@
 		6D684B891D77C09000B0FE05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D684B8B1D77C09000B0FE05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D684B911D77C0D300B0FE05 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6D684BA51D77C0EE00B0FE05 /* ReviewRSS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewRSS.swift; sourceTree = "<group>"; };
+		6D684BA51D77C0EE00B0FE05 /* RSSModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSModels.swift; sourceTree = "<group>"; };
 		6D8F98EB1D77D27000FDA633 /* Decoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		6D8F98EC1D77D27000FDA633 /* Encoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encoder.swift; sourceTree = "<group>"; };
 		6D8F98ED1D77D27000FDA633 /* ExtensionArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionArray.swift; sourceTree = "<group>"; };
@@ -39,6 +43,8 @@
 		6D8F98F01D77D27000FDA633 /* Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gloss.swift; sourceTree = "<group>"; };
 		6D8F98F11D77D27000FDA633 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D8F98F21D77D27000FDA633 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		6D8F98FA1D77D82000FDA633 /* ReviewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewController.swift; sourceTree = "<group>"; };
+		6D8F98FC1D77DA6100FDA633 /* ReviewRetriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewRetriver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D131ECD1D78032000196C1D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6D131ECE1D78033A00196C1D /* ReviewTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		6D684B731D77C09000B0FE05 = {
 			isa = PBXGroup;
 			children = (
@@ -72,23 +86,26 @@
 		6D684B7E1D77C09000B0FE05 /* AppReviewReport */ = {
 			isa = PBXGroup;
 			children = (
-				6D684BA71D77C0F800B0FE05 /* RSSModels */,
+				6D131ECD1D78032000196C1D /* Views */,
+				6D684BA71D77C0F800B0FE05 /* RSSReviewsUltilities */,
 				6D684B7F1D77C09000B0FE05 /* AppDelegate.swift */,
 				6D684B831D77C09000B0FE05 /* Main.storyboard */,
 				6D684B911D77C0D300B0FE05 /* ViewController.swift */,
 				6D684B861D77C09000B0FE05 /* Assets.xcassets */,
 				6D684B881D77C09000B0FE05 /* LaunchScreen.storyboard */,
 				6D684B8B1D77C09000B0FE05 /* Info.plist */,
+				6D8F98FA1D77D82000FDA633 /* ReviewsTableViewController.swift */,
 			);
 			path = AppReviewReport;
 			sourceTree = "<group>";
 		};
-		6D684BA71D77C0F800B0FE05 /* RSSModels */ = {
+		6D684BA71D77C0F800B0FE05 /* RSSReviewsUltilities */ = {
 			isa = PBXGroup;
 			children = (
-				6D684BA51D77C0EE00B0FE05 /* ReviewRSS.swift */,
+				6D684BA51D77C0EE00B0FE05 /* RSSModels.swift */,
+				6D8F98FC1D77DA6100FDA633 /* ReviewRetriver.swift */,
 			);
-			name = RSSModels;
+			name = RSSReviewsUltilities;
 			sourceTree = "<group>";
 		};
 		6D8F98EA1D77D27000FDA633 /* Gloss */ = {
@@ -183,11 +200,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D684B921D77C0D300B0FE05 /* ViewController.swift in Sources */,
+				6D131ECF1D78033A00196C1D /* ReviewTableViewCell.swift in Sources */,
 				6D684B801D77C09000B0FE05 /* AppDelegate.swift in Sources */,
 				6D8F98F41D77D27000FDA633 /* Encoder.swift in Sources */,
 				6D8F98F31D77D27000FDA633 /* Decoder.swift in Sources */,
-				6D684BA61D77C0EE00B0FE05 /* ReviewRSS.swift in Sources */,
+				6D8F98FD1D77DA6100FDA633 /* ReviewRetriver.swift in Sources */,
+				6D684BA61D77C0EE00B0FE05 /* RSSModels.swift in Sources */,
 				6D8F98F51D77D27000FDA633 /* ExtensionArray.swift in Sources */,
+				6D8F98FB1D77D82000FDA633 /* ReviewsTableViewController.swift in Sources */,
 				6D8F98F71D77D27000FDA633 /* Gloss.swift in Sources */,
 				6D8F98F61D77D27000FDA633 /* ExtensionDictionary.swift in Sources */,
 				6D8F98F91D77D27000FDA633 /* Operators.swift in Sources */,
