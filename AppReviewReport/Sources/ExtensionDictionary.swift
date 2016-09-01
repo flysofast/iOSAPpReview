@@ -34,7 +34,7 @@ public extension Dictionary {
      provided delimiter to indicate a nested value.
      
      For example, a dictionary with [ "outer" : [ "inner" : "value" ] ]
-     could retrive 'value' via  path "outer.inner", given a
+     could retrieve 'value' via  path "outer.inner", given a
      delimiter of ''.
      
      - parameter keyPath:   Key path delimited by delimiter.
@@ -42,7 +42,7 @@ public extension Dictionary {
      
      - returns: Value retrieved from dic
      */
-    public func valueForKeyPath(_ keyPath: String, withDelimiter delimiter: String = GlossKeyPathDelimiter) -> AnyObject? {
+    public func value(forKeyPath keyPath: String, withDelimiter delimiter: String = GlossKeyPathDelimiter) -> AnyObject? {
         let keys = keyPath.components(separatedBy: delimiter)
         
         guard let first = keys.first as? Key else {
@@ -50,17 +50,17 @@ public extension Dictionary {
             return nil
         }
         
-        guard let value = self[first] as? AnyObject else {
+        guard let value = self[first] else {
             return nil
         }
         
         if keys.count > 1, let subDict = value as? JSON {
-            let rejoined = keys[keys.indices.suffix(from: 1)].joined(separator: delimiter)
+            let rejoined = keys[1..<keys.endIndex].joined(separator: delimiter)
         
-            return subDict.valueForKeyPath(rejoined, withDelimiter: delimiter)
+            return subDict.value(forKeyPath: rejoined, withDelimiter: delimiter)
         }
         
-        return value
+        return value as AnyObject
     }
     
     // MARK: - Internal functions
@@ -121,7 +121,7 @@ public extension Dictionary {
      - parameter keyPath:       Key path.
      - parameter withDelimiter: Delimiter for key path.
      */
-    fileprivate mutating func setValue(valueToSet value: Any, forKeyPath keyPath: String, withDelimiter delimiter: String = GlossKeyPathDelimiter) {
+    private mutating func setValue(valueToSet value: Any, forKeyPath keyPath: String, withDelimiter delimiter: String = GlossKeyPathDelimiter) {
         var keys = keyPath.components(separatedBy: delimiter)
         
         guard let first = keys.first as? Key else {
