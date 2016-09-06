@@ -7,18 +7,19 @@
 //
 
 import UIKit
+import ActionSheetPicker_3_0
 
-class ReviewsTableViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
+class ReviewsTableViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate {
 
    //MARK: Properties
   @IBOutlet weak var tableView: UITableView!
   var reviews:[Review]?
+  var selectedStoreIndex = 146
+  var selectedAppID = "1128598578"
   let countryCodeArray:[String] = ["ALL","AE","AG","AI","AL","AM","AO","AR","AT","AU","AZ","BB","BE","BF","BG","BH","BJ","BM","BN","BO","BR","BS","BT","BW","BY","BZ","CA","CG","CH","CL","CN","CO","CR","CV","CY","CZ","DE","DK","DM","DO","DZ","EC","EE","EG","ES","FI","FJ","FM","FR","GB","GD","GH","GM","GR","GT","GW","GY","HK","HN","HR","HU","ID","IE","IL","IN","IS","IT","JM","JO","JP","KE","KG","KH","KN","KR","KW","KY","KZ","LA","LB","LC","LK","LR","LT","LU","LV","MD","MG","MK","ML","MN","MO","MR","MS","MT","MU","MW","MX","MY","MZ","NA","NE","NG","NI","NL","NO","NP","NZ","OM","PA","PE","PG","PH","PK","PL","PT","PW","PY","QA","RO","RU","SA","SB","SC","SE","SG","SI","SK","SL","SN","SR","ST","SV","SZ","TC","TD","TH","TJ","TM","TN","TR","TT","TW","TZ","UA","UG","US","UY","UZ","VC","VE","VG","VN","YE","ZA","ZW"]
 
   let countryArray:[String] = ["All countries","United Arab Emirates","Antigua and Barbuda","Anguilla","Albania","Armenia","Angola","Argentina","Austria","Australia","Azerbaijan","Barbados","Belgium","Burkina Faso","Bulgaria","Bahrain","Benin","Bermuda","Brunei","Bolivia","Brazil","Bahamas","Bhutan","Botswana","Belarus","Belize","Canada","Republic Of Congo","Switzerland","Chile","China","Colombia","Costa Rica","Cape Verde","Cyprus","Czech Republic","Germany","Denmark","Dominica","Dominican Republic","Algeria","Ecuador","Estonia","Egypt","Spain","Finland","Fiji","Federated States Of Micronesia","France","United Kingdom","Grenada","Ghana","Gambia","Greece","Guatemala","Guinea-Bissau","Guyana","Hong Kong","Honduras","Croatia","Hungary","Indonesia","Ireland","Israel","India","Iceland","Italy","Jamaica","Jordan","Japan","Kenya","Kyrgyzstan","Cambodia","St. Kitts and Nevis","Republic Of Korea","Kuwait","Cayman Islands","Kazakstan","Lao People’s Democratic Republic","Lebanon","St. Lucia","Sri Lanka","Liberia","Lithuania","Luxembourg","Latvia","Republic Of Moldova","Madagascar","Macedonia","Mali","Mongolia","Macau","Mauritania","Montserrat","Malta","Mauritius","Malawi","Mexico","Malaysia","Mozambique","Namibia","Niger","Nigeria","Nicaragua","Netherlands","Norway","Nepal","New Zealand","Oman","Panama","Peru","Papua New Guinea","Philippines","Pakistan","Poland","Portugal","Palau","Paraguay","Qatar","Romania","Russia","Saudi Arabia","Solomon Islands","Seychelles","Sweden","Singapore","Slovenia","Slovakia","Sierra Leone","Senegal","Suriname","Sao Tome and Principe","El Salvador","Swaziland","Turks and Caicos","Chad","Thailand","Tajikistan","Turkmenistan","Tunisia","Turkey","Trinidad and Tobago","Taiwan","Tanzania","Ukraine","Uganda","United States","Uruguay","Uzbekistan","St. Vincent and The Grenadines","Venezuela","British Virgin Islands","Vietnam","Yemen","South Africa","Zimbabwe"]
 
-
-  @IBOutlet weak var countryPicker: UIPickerView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -119,24 +120,6 @@ class ReviewsTableViewController: UIViewController ,UITableViewDataSource,UITabl
     return UITableViewAutomaticDimension
   }
 
-  //MARK: PickerView
-  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-
-    loadRateAndReviews(AppID: "1128598578", Country: countryCodeArray[row])
-    pickerView.isHidden=true
-
-  }
-  func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    return countryArray[row]
-  }
-
-  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    return countryArray.count
-  }
-
-  public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-    return 1
-  }
 
   //MARK: Action
 
@@ -152,14 +135,26 @@ class ReviewsTableViewController: UIViewController ,UITableViewDataSource,UITabl
 
     let switchStore: UIAlertAction = UIAlertAction(title: "Switch store", style: .default, handler: { (action) in
 //      alertAction.dismiss(animated: true, completion: nil)
-      self.countryPicker.isHidden = false
+      ActionSheetMultipleStringPicker.show(withTitle: "Switch Store", rows: [
+        self.countryArray
+        ], initialSelection: [self.selectedStoreIndex], doneBlock: {
+          picker, indexes, values in
+
+          print("values = \(values)")
+          print("indexes = \(indexes![0])")
+          self.selectedStoreIndex = indexes?[0] as! Int
+          self.loadRateAndReviews(AppID: self.selectedAppID, Country: self.countryCodeArray[self.selectedStoreIndex])
+          return
+        }, cancel: { ActionMultipleStringCancelBlock in return }, origin: sender)
+
 
     })
 
     alertAction.addAction(switchStore)
 
     self.present(alertAction, animated: true, completion: nil)
-    
+
+
   }
 }
 
