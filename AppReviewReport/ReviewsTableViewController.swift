@@ -86,6 +86,10 @@ class ReviewsTableViewController: UIViewController ,UITableViewDataSource,UITabl
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
     if let reviews = self.reviews {
+      if (section != 0) {
+        return 0
+      }
+
       return reviews.count
     }
     else{
