@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReviewRetriver: NSObject {
+class ReviewRetriever: NSObject {
   class func loadDataFromURL(_ url: String, completion:  @escaping (Data?,NSError?) -> Void) -> Void {
 
 
@@ -41,13 +41,13 @@ class ReviewRetriver: NSObject {
           let json = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions()) as? [String:AnyObject]
 
           guard let reviews = RSS(json: json!) else{
-            print("Error initializing RSS object")
+            print("\(Country) ReviewRetriever: Error initializing RSS object")
              completion(nil)
             return
           }
 
           guard let items = reviews.feed?.entries else{
-            print("No item found")
+            print("\(Country) ReviewRetriever: No item found")
              completion(nil)
             return
           }
