@@ -65,5 +65,13 @@
       <ContextState
          contextName = "ReviewDataManager.getReviewsFrom(countryCode : String, completion : (Bool) -&gt; ()) -&gt; [Review]:ReviewDataManager.swift">
       </ContextState>
+      <ContextState
+         contextName = "ReviewsTableViewController.numberOfSections(in : UITableView) -&gt; Int:ReviewsTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "reviewsDataManager.availableCountryCode&#10;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

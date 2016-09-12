@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppReviewReport/ReviewsTableViewController.swift"
-            timestampString = "495298005.60958"
+            timestampString = "495335918.47647"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppReviewReport/ReviewsTableViewController.swift"
-            timestampString = "495298438.330688"
+            timestampString = "495335918.47647"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppReviewReport/ReviewsTableViewController.swift"
-            timestampString = "495298005.60958"
+            timestampString = "495335918.47647"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -65,13 +65,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppReviewReport/ReviewsTableViewController.swift"
-            timestampString = "495298005.60958"
+            filePath = "AppReviewReport/ReviewDataManager.swift"
+            timestampString = "495297446.272044"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "tableView(_:titleForHeaderInSection:)"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "getReviewsFrom(countryCode:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -81,13 +81,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppReviewReport/ReviewDataManager.swift"
-            timestampString = "495297446.272044"
+            filePath = "AppReviewReport/ReviewsTableViewController.swift"
+            timestampString = "495335918.47647"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "getReviewsFrom(countryCode:)"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "dataUpdated(forCountryCode:newData:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

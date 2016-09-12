@@ -43,12 +43,13 @@ class ReviewsTableViewController: UIViewController ,UITableViewDataSource,UITabl
 
   func numberOfSections(in tableView: UITableView) -> Int {
 
-
+    print("Number of section: \(reviewsDataManager.availableCountryCode.count)")
     return reviewsDataManager.availableCountryCode.count
 
   }
 
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    print("Request for section: \(section)")
     let a =  reviewsDataManager.getCountryNameWith(code: reviewsDataManager.availableCountryCode[section])
     
     return a
@@ -145,7 +146,8 @@ class ReviewsTableViewController: UIViewController ,UITableViewDataSource,UITabl
 
   func dataUpdated(forCountryCode: String, newData: [Review?]?){
     OperationQueue.main.addOperation {
-      print("DASDAS \(forCountryCode)")
+      print("Updated \(forCountryCode)")
+       print("NEW: \(self.reviewsDataManager.availableCountryCode.count)")
        self.tableView.reloadData()
     }
 
