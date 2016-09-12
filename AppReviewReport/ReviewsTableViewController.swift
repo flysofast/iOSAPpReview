@@ -36,28 +36,27 @@ class ReviewsTableViewController: UIViewController ,UITableViewDataSource,UITabl
   // MARK: - Table view data source
 
   func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-    return reviewsDataManager.availableCountryCode
+    return reviewsDataManager.getAvailableCountryCodes()
   }
 
       
 
   func numberOfSections(in tableView: UITableView) -> Int {
 
-    print("Number of section: \(reviewsDataManager.availableCountryCode.count)")
-    return reviewsDataManager.availableCountryCode.count
+       return reviewsDataManager.getAvailableCountryCodes().count
 
   }
 
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     print("Request for section: \(section)")
-    let a =  reviewsDataManager.getCountryNameWith(code: reviewsDataManager.availableCountryCode[section])
-    
-    return a
+//    let a =  reviewsDataManager.getCountryNameWith(code: reviewsDataManager.availableCountryCode[section])
+
+    return reviewsDataManager.getCountryNameWith(index: section)
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-    if let reviews = reviewsDataManager.reviewData[reviewsDataManager.availableCountryCode[section]]{
+    if let reviews = reviewsDataManager.reviewData[reviewsDataManager.getAvailableCountryWith(index: section)]{
       return reviews.count
     }
     else{
@@ -71,12 +70,9 @@ class ReviewsTableViewController: UIViewController ,UITableViewDataSource,UITabl
 
     let cell = self.tableView .dequeueReusableCell(withIdentifier: cellIdentifier) as! ReviewTableViewCell
 
-    if let review = reviewsDataManager.getReviewsFrom(countryCode: reviewsDataManager.availableCountryCode[indexPath.section])[indexPath.row]{
+     let review = reviewsDataManager.getReviewsFor(countryCode: reviewsDataManager.getAvailableCountryWith(index: indexPath.section), index: indexPath.row)
       cell.setCellContent(review: review)
-    }
-    else{
-      cell.setCellContent(review: Review())
-    }
+
 
 
 
@@ -109,7 +105,7 @@ class ReviewsTableViewController: UIViewController ,UITableViewDataSource,UITabl
     let switchStore: UIAlertAction = UIAlertAction(title: "Switch store", style: .default, handler: { (action) in
 //      alertAction.dismiss(animated: true, completion: nil)
       ActionSheetMultipleStringPicker.show(withTitle: "Switch Store", rows: [
-        self.reviewsDataManager.availableCountryCode
+        self.reviewsDataManager.getAvailableCountryCodes()
         ], initialSelection: [self.selectedStoreIndex], doneBlock: {
           picker, indexes, values in
 
@@ -147,7 +143,7 @@ class ReviewsTableViewController: UIViewController ,UITableViewDataSource,UITabl
   func dataUpdated(forCountryCode: String, newData: [Review?]?){
     OperationQueue.main.addOperation {
       print("Updated \(forCountryCode)")
-       print("NEW: \(self.reviewsDataManager.availableCountryCode.count)")
+
        self.tableView.reloadData()
     }
 

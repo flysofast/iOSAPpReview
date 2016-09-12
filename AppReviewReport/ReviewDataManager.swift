@@ -21,22 +21,25 @@ class ReviewDataManager: NSObject {
   public var reviewData : Dictionary<String, Array<Review?>> = [:]
 
 
-  var availableCountryCode: [String] = ["AE","AG","AI","AL","AM","AO","AR","AT","AU","AZ","BB","BE","BF","BG","BH","BJ","BM","BN","BO","BR","BS","BT","BW","BY","BZ","CA","CG","CH","CL","CN","CO","CR","CV","CY","CZ","DE","DK","DM","DO","DZ","EC","EE","EG","ES","FI","FJ","FM","FR","GB","GD","GH","GM","GR","GT","GW","GY","HK","HN","HR","HU","ID","IE","IL","IN","IS","IT","JM","JO","JP","KE","KG","KH","KN","KR","KW","KY","KZ","LA","LB","LC","LK","LR","LT","LU","LV","MD","MG","MK","ML","MN","MO","MR","MS","MT","MU","MW","MX","MY","MZ","NA","NE","NG","NI","NL","NO","NP","NZ","OM","PA","PE","PG","PH","PK","PL","PT","PW","PY","QA","RO","RU","SA","SB","SC","SE","SG","SI","SK","SL","SN","SR","ST","SV","SZ","TC","TD","TH","TJ","TM","TN","TR","TT","TW","TZ","UA","UG","US","UY","UZ","VC","VE","VG","VN","YE","ZA","ZW"]
+  private var availableCountryCodes: [String] = ["AE","AG","AI","AL","AM","AO","AR","AT","AU","AZ","BB","BE","BF","BG","BH","BJ","BM","BN","BO","BR","BS","BT","BW","BY","BZ","CA","CG","CH","CL","CN","CO","CR","CV","CY","CZ","DE","DK","DM","DO","DZ","EC","EE","EG","ES","FI","FJ","FM","FR","GB","GD","GH","GM","GR","GT","GW","GY","HK","HN","HR","HU","ID","IE","IL","IN","IS","IT","JM","JO","JP","KE","KG","KH","KN","KR","KW","KY","KZ","LA","LB","LC","LK","LR","LT","LU","LV","MD","MG","MK","ML","MN","MO","MR","MS","MT","MU","MW","MX","MY","MZ","NA","NE","NG","NI","NL","NO","NP","NZ","OM","PA","PE","PG","PH","PK","PL","PT","PW","PY","QA","RO","RU","SA","SB","SC","SE","SG","SI","SK","SL","SN","SR","ST","SV","SZ","TC","TD","TH","TJ","TM","TN","TR","TT","TW","TZ","UA","UG","US","UY","UZ","VC","VE","VG","VN","YE","ZA","ZW"]
 
 //  override init() {
 //    availableCountryCode = NSLocale.isoCountryCodes
 //  }
 
-  func addReviewWith(countryCode: String, review: Review){
-    reviewData[countryCode]?.append(review)
 
+  func getReviewsFor(countryCode: String, index: Int) -> Review {
+     let reviews = getReviewsFrom(countryCode: countryCode)
+      if(reviews.count > index){
+        return reviews[index]!
+
+    }
+      else{
+        return Review()
+    }
   }
 
-  func addReviewWith(countryCode: String, reviews: [Review?]){
-    reviewData[countryCode]?.append(contentsOf: reviews)
-  }
-
-  func getReviewsFrom(countryCode: String) -> [Review?]{
+ private func getReviewsFrom(countryCode: String) -> [Review?]{
 
    let reviews = reviewData[countryCode]
     if(reviews == nil || reviews?.count==0){
@@ -51,7 +54,7 @@ class ReviewDataManager: NSObject {
 
         }else{
 
-//          self.availableCountryCode.remove(at: self.availableCountryCode.index(of: countryCode)!)
+          self.availableCountryCodes.remove(at: self.availableCountryCodes.index(of: countryCode)!)
 
         }
         self.delegate?.dataUpdated(forCountryCode: countryCode, newData: list)
@@ -64,6 +67,8 @@ class ReviewDataManager: NSObject {
 
   }
 
+  //MARK: Country names - Country Codes
+
   func getCountryNameWith(code: String) -> String{
 
     //for code in NSLocale.isoCountryCodes as [String] {
@@ -71,6 +76,29 @@ class ReviewDataManager: NSObject {
     let name = NSLocale(localeIdentifier: Locale.current.identifier).displayName(forKey: NSLocale.Key.identifier, value: id) ?? code
 
     return name
+  }
+
+  func getCountryNameWith(index: Int) -> String{
+    if(index < availableCountryCodes.count){
+      return getCountryNameWith(code: availableCountryCodes[index])
+    }
+    else{
+      return "No review data"
+    }
+  }
+
+  func getAvailableCountryWith(index: Int) ->String{
+    if(index < availableCountryCodes.count){
+      return  availableCountryCodes[index]
+    }
+    else{
+      return "NotAvailable"
+    }
+
+  }
+
+  func getAvailableCountryCodes() -> [String]{
+    return availableCountryCodes
   }
 
 }

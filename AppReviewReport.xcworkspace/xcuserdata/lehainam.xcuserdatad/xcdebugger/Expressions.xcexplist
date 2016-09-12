@@ -46,19 +46,38 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ReviewsTableViewController.(dataUpdated(forCountryCode : String, newData : [Review?]?) -&gt; ()).(closure #1):ReviewsTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.reviewsDataManager.availableCountryCode&#10;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ReviewsTableViewController.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:ReviewsTableViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "reviewsDataManager.availableCountryCode">
             </PersistentString>
             <PersistentString
-               value = "reviewsDataManager.getReviewsFrom(countryCode: reviewsDataManager.availableCountryCode[indexPath.section])">
-            </PersistentString>
-            <PersistentString
                value = "indexPath.section">
             </PersistentString>
             <PersistentString
                value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "reviewsDataManager.getReviewsFrom(countryCode: reviewsDataManager.getAvailableCountryWith(index: indexPath.section))">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static ReviewRetriever.loadDataFromURL(String, completion : (Data?, NSError?) -&gt; ()) -&gt; ():ReviewRetriever.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "url">
+            </PersistentString>
+            <PersistentString
+               value = "URL(string: &quot;http://itunes.apple.com/Notavaiable/rss/customerreviews/id=1128598578/sortBy=mostRecent/json&quot;&#9;)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
