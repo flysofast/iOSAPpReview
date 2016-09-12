@@ -17,14 +17,14 @@ class ReviewsTableViewController: UIViewController ,UITableViewDataSource,UITabl
   var appIDArray = ["1128598578","920659520"]
   var appArray = ["Night club strobe light","Scan & translate"]
    let reviewsDataManager = ReviewDataManager()
-
+  var refreshControl = UIRefreshControl()
 
   override func viewDidLoad() {
     super.viewDidLoad()
     reviewsDataManager.delegate = self
 
     self.tableView.sectionIndexBackgroundColor = UIColor.init(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5)
-
+    self.tableView.addSubview(refreshControl)
 
   }
 
@@ -126,9 +126,15 @@ class ReviewsTableViewController: UIViewController ,UITableViewDataSource,UITabl
   func dataUpdated(forCountryCode: String, newData: [Review?]?){
     OperationQueue.main.addOperation {
       print("Updated \(forCountryCode)")
-
        self.tableView.reloadData()
     }
 
+  }
+
+  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    if (refreshControl.isRefreshing){
+      reviewsDataManager.refreshData()
+      self.refreshControl.endRefreshing()
+    }
   }
 }
