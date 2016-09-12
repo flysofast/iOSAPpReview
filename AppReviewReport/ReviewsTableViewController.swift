@@ -14,17 +14,17 @@ class ReviewsTableViewController: UIViewController ,UITableViewDataSource,UITabl
    //MARK: Properties
   @IBOutlet weak var tableView: UITableView!
 //  var reviews:[Review]?
-  var selectedStoreIndex = 146
-  var selectedAppIndex = 0
   var appIDArray = ["1128598578","920659520"]
   var appArray = ["Night club strobe light","Scan & translate"]
    let reviewsDataManager = ReviewDataManager()
 
 
-
   override func viewDidLoad() {
     super.viewDidLoad()
     reviewsDataManager.delegate = self
+
+    self.tableView.sectionIndexBackgroundColor = UIColor.init(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5)
+
 
   }
 
@@ -48,9 +48,6 @@ class ReviewsTableViewController: UIViewController ,UITableViewDataSource,UITabl
   }
 
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    print("Request for section: \(section)")
-//    let a =  reviewsDataManager.getCountryNameWith(code: reviewsDataManager.availableCountryCode[section])
-
     return reviewsDataManager.getCountryNameWith(index: section)
   }
 
@@ -102,29 +99,16 @@ class ReviewsTableViewController: UIViewController ,UITableViewDataSource,UITabl
     
     alertAction.addAction(cancelAction)
 
-    let switchStore: UIAlertAction = UIAlertAction(title: "Switch store", style: .default, handler: { (action) in
-//      alertAction.dismiss(animated: true, completion: nil)
-      ActionSheetMultipleStringPicker.show(withTitle: "Switch Store", rows: [
-        self.reviewsDataManager.getAvailableCountryCodes()
-        ], initialSelection: [self.selectedStoreIndex], doneBlock: {
-          picker, indexes, values in
-
-          self.selectedStoreIndex = indexes?[0] as! Int
-        }, cancel: { ActionMultipleStringCancelBlock in return }, origin: sender)
-
-
-    })
-
-    alertAction.addAction(switchStore)
 
     let switchApp: UIAlertAction = UIAlertAction(title: "Switch app", style: .default, handler: { (action) in
       //      alertAction.dismiss(animated: true, completion: nil)
-      ActionSheetMultipleStringPicker.show(withTitle: "Switch Store", rows: [
+      ActionSheetMultipleStringPicker.show(withTitle: "Switch app", rows: [
         self.appArray
-        ], initialSelection: [self.selectedAppIndex], doneBlock: {
+        ], initialSelection: [self.reviewsDataManager.selectedAppIndex], doneBlock: {
           picker, indexes, values in
 
-          self.selectedAppIndex = indexes?[0] as! Int
+          self.reviewsDataManager.selectedAppIndex = indexes?[0] as! Int
+          self.reviewsDataManager.refreshData()
 
         }, cancel: { ActionMultipleStringCancelBlock in return }, origin: sender)
 
@@ -136,7 +120,6 @@ class ReviewsTableViewController: UIViewController ,UITableViewDataSource,UITabl
     self.present(alertAction, animated: true, completion: nil)
 
   }
-
 
   // MARK: Delegate
 

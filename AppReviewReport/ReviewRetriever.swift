@@ -11,6 +11,9 @@ import UIKit
 class ReviewRetriever: NSObject {
   class func loadDataFromURL(_ url: String, completion:  @escaping (Data?,NSError?) -> Void) -> Void {
 
+    if (url == ""){
+      return
+    }
 
     let request = URLRequest(url: URL(string: url)!)
 
