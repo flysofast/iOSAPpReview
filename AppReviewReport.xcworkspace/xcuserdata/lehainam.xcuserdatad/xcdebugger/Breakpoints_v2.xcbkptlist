@@ -66,11 +66,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppReviewReport/ReviewDataManager.swift"
-            timestampString = "495341120.180373"
+            timestampString = "495353915.843393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "getReviewsFrom(countryCode:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -81,13 +81,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AppReviewReport/ReviewsTableViewController.swift"
-            timestampString = "495343671.963005"
+            filePath = "AppReviewReport/RSSModels.swift"
+            timestampString = "495345302.413792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "dataUpdated(forCountryCode:newData:)"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "init(json:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

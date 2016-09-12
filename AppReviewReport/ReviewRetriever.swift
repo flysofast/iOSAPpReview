@@ -37,6 +37,7 @@ class ReviewRetriever: NSObject {
 
   class func getReviewsFrom(AppID: String, Country: String, completion: @escaping ([Review]?) -> Void ){
     let url = "http://itunes.apple.com/\(Country)/rss/customerreviews/id=\(AppID)/sortBy=mostRecent/json"
+//    let url = "http://itunes.apple.com/vn_en/rss/customerreviews/id=\(AppID)/sortBy=mostRecent/json"
     loadDataFromURL(url) { (data, error) in
       if let data=data{
 

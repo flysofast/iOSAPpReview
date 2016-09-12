@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="56" width="375" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hGd-23-ERi" id="N0i-z0-3Uy">
-                                            <frame key="frameInset" width="375" height="107"/>
+                                            <frame key="frameInset" width="375" height="107.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 - Good app" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paL-vQ-VZ8">
@@ -55,7 +55,7 @@
                                             <constraints>
                                                 <constraint firstItem="5Ke-no-WwI" firstAttribute="leading" secondItem="paL-vQ-VZ8" secondAttribute="leading" id="0af-fz-3Dq"/>
                                                 <constraint firstItem="paL-vQ-VZ8" firstAttribute="width" secondItem="N0i-z0-3Uy" secondAttribute="width" id="6fh-Oe-fZx"/>
-                                                <constraint firstAttribute="bottom" secondItem="lYB-E7-eBW" secondAttribute="bottom" id="7Tf-nc-Ahh"/>
+                                                <constraint firstAttribute="bottom" secondItem="lYB-E7-eBW" secondAttribute="bottom" constant="3" id="7Tf-nc-Ahh"/>
                                                 <constraint firstItem="lYB-E7-eBW" firstAttribute="leading" secondItem="paL-vQ-VZ8" secondAttribute="leading" id="IxK-Rc-n0E"/>
                                                 <constraint firstAttribute="trailing" secondItem="5Ke-no-WwI" secondAttribute="trailing" id="OPd-RI-XQk"/>
                                                 <constraint firstItem="paL-vQ-VZ8" firstAttribute="top" secondItem="N0i-z0-3Uy" secondAttribute="topMargin" id="THF-We-gjr"/>

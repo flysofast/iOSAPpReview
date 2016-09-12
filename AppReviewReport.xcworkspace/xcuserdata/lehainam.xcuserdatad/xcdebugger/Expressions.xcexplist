@@ -11,49 +11,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ReviewsTableViewController.(numberOfSections(in : UITableView) -&gt; Int).(closure #1):ReviewsTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "countryCodeArray.index(of: &quot;UY&quot;)">
-            </PersistentString>
-            <PersistentString
-               value = "countryCodeArray">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ReviewsTableViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:ReviewsTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "countryCodeArray[section]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ReviewDataManager.(getReviewsFrom(countryCode : String) -&gt; [Review?]).(closure #1):ReviewDataManager.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.availableCountryCode">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ReviewsTableViewController.tableView(UITableView, titleForHeaderInSection : Int) -&gt; String?:ReviewsTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "reviewsDataManager.availableCountryCode">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ReviewsTableViewController.(dataUpdated(forCountryCode : String, newData : [Review?]?) -&gt; ()).(closure #1):ReviewsTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.reviewsDataManager.availableCountryCode&#10;">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "ReviewsTableViewController.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:ReviewsTableViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -71,6 +28,25 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ReviewDataManager.getReviewsFrom(countryCode : String, completion : (Bool) -&gt; ()) -&gt; [Review]:ReviewDataManager.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ReviewsTableViewController.tableView(UITableView, titleForHeaderInSection : Int) -&gt; String?:ReviewsTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "reviewsDataManager.availableCountryCode">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ReviewDataManager.(getReviewsFrom(countryCode : String) -&gt; [Review?]).(closure #1):ReviewDataManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.availableCountryCode">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "static ReviewRetriever.loadDataFromURL(String, completion : (Data?, NSError?) -&gt; ()) -&gt; ():ReviewRetriever.swift">
          <PersistentStrings>
             <PersistentString
@@ -82,13 +58,48 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ReviewDataManager.getReviewsFrom(countryCode : String, completion : (Bool) -&gt; ()) -&gt; [Review]:ReviewDataManager.swift">
+         contextName = "ReviewsTableViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:ReviewsTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "countryCodeArray[section]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ReviewDataManager.getOutdatedSections() -&gt; [Int]:ReviewDataManager.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ReviewDataManager.getOutdatedSections() -&gt; Set&lt;Int&gt;:ReviewDataManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "outdatedSections">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ReviewsTableViewController.(numberOfSections(in : UITableView) -&gt; Int).(closure #1):ReviewsTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "countryCodeArray.index(of: &quot;UY&quot;)">
+            </PersistentString>
+            <PersistentString
+               value = "countryCodeArray">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "ReviewsTableViewController.numberOfSections(in : UITableView) -&gt; Int:ReviewsTableViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "reviewsDataManager.availableCountryCode&#10;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ReviewsTableViewController.(dataUpdated(forCountryCode : String, newData : [Review?]?) -&gt; ()).(closure #1):ReviewsTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.reviewsDataManager.availableCountryCode&#10;">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

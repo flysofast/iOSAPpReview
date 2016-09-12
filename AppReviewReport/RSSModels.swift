@@ -22,6 +22,32 @@ public struct Feed: Decodable{
   }
 }
 
+public struct AppInfo: Decodable{
+  public var appName:String
+  public var rights: String
+  public var author: String
+
+  public init?(json:JSON){
+  guard let authorCont: JSON = "im:artist" <~~ json,
+    let rightsCont: JSON = "rights" <~~ json,
+    let appNameCont: JSON = "title" <~~ json
+    else{
+      return nil
+    }
+
+    guard let appName: String = "label" <~~ appNameCont,
+      let author: String = "label" <~~ authorCont,
+      let rights: String = "label" <~~ rightsCont
+      else{
+        return nil
+    }
+
+    self.author=author
+    self.appName=appName
+    self.rights=rights
+  }
+}
+
 public struct Review: Decodable{
   public var ratingStars:Int
   public var author:String

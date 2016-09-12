@@ -126,7 +126,8 @@ class ReviewsTableViewController: UIViewController ,UITableViewDataSource,UITabl
   func dataUpdated(forCountryCode: String, newData: [Review?]?){
     OperationQueue.main.addOperation {
       print("Updated \(forCountryCode)")
-       self.tableView.reloadData()
+      self.tableView.reloadData()
+//      self.tableView.reloadRows(at: self.tableView.indexPathsForVisibleRows!, with: .fade)
     }
 
   }
