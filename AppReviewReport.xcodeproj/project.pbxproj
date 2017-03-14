@@ -23,7 +23,7 @@
 		6D8F98F81D77D27000FDA633 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D8F98F11D77D27000FDA633 /* Info.plist */; };
 		6D8F98F91D77D27000FDA633 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F98F21D77D27000FDA633 /* Operators.swift */; };
 		6D8F98FB1D77D82000FDA633 /* ReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F98FA1D77D82000FDA633 /* ReviewsTableViewController.swift */; };
-		6D8F98FD1D77DA6100FDA633 /* ReviewRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F98FC1D77DA6100FDA633 /* ReviewRetriever.swift */; };
+		6D928DEB1E642C590082632B /* ReviewRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D928DEA1E642C590082632B /* ReviewRetriever.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +47,7 @@
 		6D8F98F11D77D27000FDA633 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D8F98F21D77D27000FDA633 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		6D8F98FA1D77D82000FDA633 /* ReviewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewController.swift; sourceTree = "<group>"; };
-		6D8F98FC1D77DA6100FDA633 /* ReviewRetriever.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewRetriever.swift; sourceTree = "<group>"; };
+		6D928DEA1E642C590082632B /* ReviewRetriever.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewRetriever.swift; sourceTree = "<group>"; };
 		74FE6087D719399122C64CB7 /* Pods-AppReviewReport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppReviewReport.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppReviewReport/Pods-AppReviewReport.debug.xcconfig"; sourceTree = "<group>"; };
 		C3086E6218CA7DBE13628825 /* Pods-AppReviewReport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppReviewReport.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppReviewReport/Pods-AppReviewReport.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,8 +110,8 @@
 		6D684BA71D77C0F800B0FE05 /* RSSReviewsUltilities */ = {
 			isa = PBXGroup;
 			children = (
+				6D928DEA1E642C590082632B /* ReviewRetriever.swift */,
 				6D684BA51D77C0EE00B0FE05 /* RSSModels.swift */,
-				6D8F98FC1D77DA6100FDA633 /* ReviewRetriever.swift */,
 				6D6582BD1D7F185400BB7612 /* ReviewDataManager.swift */,
 			);
 			name = RSSReviewsUltilities;
@@ -186,7 +186,7 @@
 					6D684B7B1D77C09000B0FE05 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4SR6G3HYXU;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -280,12 +280,12 @@
 				6D684B801D77C09000B0FE05 /* AppDelegate.swift in Sources */,
 				6D8F98F41D77D27000FDA633 /* Encoder.swift in Sources */,
 				6D8F98F31D77D27000FDA633 /* Decoder.swift in Sources */,
-				6D8F98FD1D77DA6100FDA633 /* ReviewRetriever.swift in Sources */,
 				6D684BA61D77C0EE00B0FE05 /* RSSModels.swift in Sources */,
 				6D8F98F51D77D27000FDA633 /* ExtensionArray.swift in Sources */,
 				6D8F98FB1D77D82000FDA633 /* ReviewsTableViewController.swift in Sources */,
 				6D8F98F71D77D27000FDA633 /* Gloss.swift in Sources */,
 				6D6582BE1D7F185400BB7612 /* ReviewDataManager.swift in Sources */,
+				6D928DEB1E642C590082632B /* ReviewRetriever.swift in Sources */,
 				6D8F98F61D77D27000FDA633 /* ExtensionDictionary.swift in Sources */,
 				6D8F98F91D77D27000FDA633 /* Operators.swift in Sources */,
 			);

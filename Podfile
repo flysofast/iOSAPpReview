@@ -8,6 +8,6 @@ target 'AppReviewReport' do
   # Pods for AppReviewReport
 	source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
-
+pod 'SideMenu'
 pod 'ActionSheetPicker-3.0'
 end

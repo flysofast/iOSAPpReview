@@ -1,12 +1,15 @@
 PODS:
   - ActionSheetPicker-3.0 (2.2.0)
+  - SideMenu (2.0.7)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
+  - SideMenu
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
+  SideMenu: c5d3c3bc855b96bc2059e0b1ec346ecb54e80447
 
-PODFILE CHECKSUM: b46febd7bed39ea4515b1539dc0cd618aa19c2b9
+PODFILE CHECKSUM: f4d8dd64aeb2408bba1c2b060ebbd63fae7276d8
 
 COCOAPODS: 1.0.1
